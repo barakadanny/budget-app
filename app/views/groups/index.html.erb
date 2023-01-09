@@ -2,7 +2,7 @@
 
 <% @groups.each do |group| %>
   <p><%= group.name %></p>
-    <p><%= group.icon %></p>
+    <p><%= image_tag group.icon %></p>
 <% end %>
 
 <%= link_to 'Create Group', new_group_path %>

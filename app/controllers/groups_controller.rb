@@ -15,11 +15,12 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
-      format.html {
-        redirect_to @group, notice: 'Group was succesfully created.'
-      }
+    #   format.html {
+    #     redirect_to @group, notice: 'Group was succesfully created.'
+    #   }
+      redirect_to @group, notice: 'Group was succesfully created.'
     else
-      format.html { render :new, status: :unprocessable_entitly }
+      format.html { render :new, status: :unprocessable_entity }
     end
   end
 
