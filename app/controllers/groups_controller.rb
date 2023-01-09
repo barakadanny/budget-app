@@ -18,7 +18,7 @@ class GroupsController < ApplicationController
     #   format.html {
     #     redirect_to @group, notice: 'Group was succesfully created.'
     #   }
-      redirect_to @group, notice: 'Group was succesfully created.'
+    redirect_to groups_path
     else
       render "new", status: :unprocessable_entity
     end
