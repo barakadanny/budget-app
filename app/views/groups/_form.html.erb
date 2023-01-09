@@ -1,0 +1,9 @@
+<%= form_with model: @group, local: true do |form| %>
+    <%= form.label :name%>
+    <%= form.text_field :name %>
+
+    <%= form.label :icon %>
+    <%= form.text_field :icon %>
+
+    <%= form.submit %>
+<% end %>
