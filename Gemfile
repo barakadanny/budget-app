@@ -72,3 +72,4 @@ group :test do
 end
 
 gem 'devise'
+gem 'petergate', '~> 3.0'
