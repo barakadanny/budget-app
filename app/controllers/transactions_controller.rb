@@ -18,8 +18,7 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new(transaction_params)
     @transaction.user_id = current_user.id
     if @transaction.save
-      # redirect_to group_path(@transaction.group_id)
-      redirect_to transactions_path
+      redirect_to group_transactions_path(@transaction.group_id)
     else
       render "new", status: :unprocessable_entity
     end
