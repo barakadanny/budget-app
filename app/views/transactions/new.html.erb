@@ -1,8 +1,13 @@
 <h1>Create new transaction</h1>
 
-<% @transactions.each do |transaction| %>
-  <p><%= transaction.name %></p>
-  <p><%= transaction.amount %></p>
+
+<% if @transactions.present? %>
+  <% @transactions.each do |transaction| %>
+    <p><%= transaction.name %></p>
+    <p><%= transaction.amount %></p>
+  <% end %>
+<% else %>
+  <p>No transactions yet.</p>
 <% end %>
 
 <%= render "form", transaction: @transaction %>

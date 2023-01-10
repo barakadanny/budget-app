@@ -1,4 +1,5 @@
-<%= form_with(model: transaction) do |form| %>
+<%# <%= form_for(model: transaction) do |form| %> 
+<%= form_for @transaction do |form| %>
     <% if @transaction.errors.any? %>
         <% @transaction.errors.full_messages.each do |message|%>
             <h3><%= message %> </h3>
