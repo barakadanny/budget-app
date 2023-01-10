@@ -2,7 +2,7 @@ class TransactionsController < ApplicationController
   access user: :all, admin: :all
   
   def index
-    @transactions = Transaction.where(group_id: params[:group_id])
+    @transactions = Transaction.where(params[:group_id])
   end
 
   def show
@@ -11,11 +11,11 @@ class TransactionsController < ApplicationController
 
   def new
     if params[:group_id]
-      @transactions = Transaction.where(group_id: params[:group_id])
+      @transactions = Transaction.where(params[:group_id])
     else
       []
     end
-    @transaction = Transaction.new(group_id: params[:group_id])
+    @transaction = Transaction.new(params[:group_id])
   end
 
   def create
