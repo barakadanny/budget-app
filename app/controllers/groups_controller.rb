@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  access user: :all, admin: :all
 
   def index
     @groups = Group.all
