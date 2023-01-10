@@ -1,4 +1,5 @@
 class TransactionsController < ApplicationController
+  access user: :all, admin: :all
   
   def index
     @transactions = Transaction.all
