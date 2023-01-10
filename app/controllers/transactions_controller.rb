@@ -6,10 +6,6 @@ class TransactionsController < ApplicationController
     @transactions = Transaction.where(group_id: @group.id, user_id: current_user.id)
   end
 
-  def show
-    @transaction = Transaction.all
-  end
-
   def new
     @transaction = Transaction.new
   end
