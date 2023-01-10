@@ -1,0 +1,15 @@
+<%= form_with model: @transaction do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  
+  <%= form.label :amount %>
+  <%= form.text_field :amount %>
+
+  <%= form.label :user_id %>
+  <%= form.text_field :user_id, :value => current_user.id %>
+
+  <%= form.label :group_id %>
+  <%= form.text_field :group_id, :value => params[:group_id] %>
+  
+  <%= form.submit "Create Transaction" %>
+<% end %>

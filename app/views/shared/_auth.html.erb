@@ -1,0 +1,5 @@
+<% if user_signed_in? %>
+    <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+<% else %>
+    <h1>Welcome to The Budget App</h1>
+<% end %>

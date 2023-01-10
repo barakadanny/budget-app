@@ -1,0 +1,15 @@
+<%= form_with(model: group) do |form| %>
+    <% if @group.errors.any? %>
+        <% @group.errors.full_messages.each do |message|%>
+            <h3><%= message %> </h3>
+        <%end%>
+    <%end%>
+
+    <%= form.label :name%>
+    <%= form.text_field :name %><br><br>
+
+    <%= form.label :icon %>
+    <%= form.text_field :icon %><br><br>
+
+    <%= form.submit %>
+<% end %>

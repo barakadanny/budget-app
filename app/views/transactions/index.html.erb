@@ -1,0 +1,8 @@
+<h1>Transaction Page</h1>
+
+<% @transactions.each do |transaction| %>
+  <p><%= transaction.name %></p>
+  <p><%= transaction.amount %></p>
+<% end %>
+
+<%= link_to 'Create transaction', new_group_transaction_path(group_id: @group.id) %>
