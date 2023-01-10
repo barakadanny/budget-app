@@ -6,7 +6,7 @@ class TransactionsController < ApplicationController
   end
 
   def new
-    @transaction = Transaction.new
+    @transaction = Transaction.new(group_id: params[:group_id])
   end
 
   def create
@@ -20,6 +20,6 @@ class TransactionsController < ApplicationController
   end
 
   def transaction_params
-    params.require(:transaction).permit(:name, :amount, :user_id)
+    params.require(:transaction).permit(:name, :amount, :user_id, :group_id)
   end
 end

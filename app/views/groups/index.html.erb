@@ -1,7 +1,7 @@
 <h1>This is the groups index page</h1>
 
 <% @groups.each do |group| %>
-  <p><%= link_to group.name, transactions_path %></p>
+  <p><%= link_to group.name, new_transaction_path(group_id: group.id) %></p>
   <p><%= image_tag group.icon %></p>
 <% end %>
 
