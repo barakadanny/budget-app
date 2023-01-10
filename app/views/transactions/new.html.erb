@@ -1,3 +1,8 @@
 <h1>Create new transaction</h1>
 
+<% @transactions.each do |transaction| %>
+  <p><%= transaction.name %></p>
+  <p><%= transaction.amount %></p>
+<% end %>
+
 <%= render "form", transaction: @transaction %>
