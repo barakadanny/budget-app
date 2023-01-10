@@ -5,6 +5,10 @@ class TransactionsController < ApplicationController
     @transactions = Transaction.where(group_id: params[:group_id])
   end
 
+  def show
+    @transaction = Transaction.find(params[:id])
+  end
+
   def new
     if params[:group_id]
       @transactions = Transaction.where(group_id: params[:group_id])
