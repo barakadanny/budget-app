@@ -4,4 +4,5 @@ class Transaction < ApplicationRecord
     validates :user_id, presence: true
 
     belongs_to :user
+    # scope :for_group, ->(group_id) { where(group_id: group_id) }
   end

@@ -5,13 +5,4 @@
   <p><%= transaction.amount %></p>
 <% end %>
 
-<%# <% if @transactions.present? %> 
-  <%# <% @transactions.each do |transaction| %> 
-    <%# <><%= transaction.name %>
-    <%# <><%= transaction.amount %>
-  <%# <% end %> 
-<%# <% else %> 
-  <%# <p>No transactions yet.</p> %>
-<%# <% end %> 
-
-<%= link_to 'Create transaction', new_transaction_path %>
+<%= link_to 'Create transaction', new_group_transaction_path(group_id: @group.id) %>

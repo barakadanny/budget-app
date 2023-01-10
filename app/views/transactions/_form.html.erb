@@ -1,18 +1,15 @@
-<%# <%= form_for(model: transaction) do |form| %> 
-<%= form_for @transaction do |form| %>
-    <% if @transaction.errors.any? %>
-        <% @transaction.errors.full_messages.each do |message|%>
-            <h3><%= message %> </h3>
-        <%end%>
-    <%end%>
+<%= form_with model: @transaction do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  
+  <%= form.label :amount %>
+  <%= form.text_field :amount %>
 
-    <%= form.hidden_field :group_id, value: params[:group_id] %>
+  <%= form.label :user_id %>
+  <%= form.text_field :user_id, :value => current_user.id %>
 
-    <%= form.label :name%>
-    <%= form.text_field :name %><br><br>
-
-    <%= form.label :amount %>
-    <%= form.text_field :amount %><br> <br>
-
-    <%= form.submit %>
+  <%= form.label :group_id %>
+  <%= form.text_field :group_id, :value => params[:group_id] %>
+  
+  <%= form.submit "Create Transaction" %>
 <% end %>

@@ -2,20 +2,16 @@ class TransactionsController < ApplicationController
   access user: :all, admin: :all
   
   def index
-    @transactions = Transaction.where(params[:group_id])
+    @transactions = Transaction.all
+    @group = Group.find(params[:group_id])
   end
 
   def show
-    @transaction = Transaction.find(params[:id])
+    @transaction = Transaction.all
   end
 
   def new
-    if params[:group_id]
-      @transactions = Transaction.where(params[:group_id])
-    else
-      []
-    end
-    @transaction = Transaction.new(params[:group_id])
+    @transaction = Transaction.new
   end
 
   def create
