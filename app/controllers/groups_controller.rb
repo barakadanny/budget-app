@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   access user: :all, admin: :all
 
   def index
-    @groups = Group.all
+    @groups = Group.joins(:user).where(users: {id: current_user.id})
   end
 
   def show
