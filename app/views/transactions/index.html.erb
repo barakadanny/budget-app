@@ -1,17 +1,17 @@
 <h1>Transaction Page</h1>
 
-<%# <% @transactions.each do |transaction| %> %>
-  <%# <p><%= transaction.name %></p> %>
-  <%# <p><%= transaction.amount %></p> %>
-<%# <% end %> %>
-
-<% if @transactions.present? %>
-  <% @transactions.each do |transaction| %>
-    <p><%= transaction.name %></p>
-    <p><%= transaction.amount %></p>
-  <% end %>
-<% else %>
-  <p>No transactions yet.</p>
+<% @transactions.each do |transaction| %>
+  <p><%= transaction.name %></p>
+  <p><%= transaction.amount %></p>
 <% end %>
+
+<%# <% if @transactions.present? %> 
+  <%# <% @transactions.each do |transaction| %> 
+    <%# <><%= transaction.name %>
+    <%# <><%= transaction.amount %>
+  <%# <% end %> 
+<%# <% else %> 
+  <%# <p>No transactions yet.</p> %>
+<%# <% end %> 
 
 <%= link_to 'Create transaction', new_transaction_path %>
