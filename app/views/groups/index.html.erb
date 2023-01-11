@@ -1,8 +1,43 @@
-<h1>This is the groups index page</h1>
+<div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl  max-w-screen-lg px-4 py-8 mx-auto">
+  <div class="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
+    <div class="flex items-start justify-between">
+      <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">Groups</h2>
+    </div>
 
-<% @groups.each do |group| %>
-  <p><%= link_to group.name, group_transactions_path(group_id: group.id) %></p>
-  <p><%= image_tag group.icon %></p>
-<% end %>
+    <div class="mt-8">
+      <div class="flow-root">
+        <ul role="list" class="-my-6 divide-y divide-gray-200">
+          <% @groups.each do |group| %>
+            <li class="flex py-6">
+              <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                <%# <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="h-full w-full object-cover object-center"> %>
+                <%= image_tag group.icon, class: "h-full w-full object-cover object-center" %>
+              </div>
 
-<%= link_to 'Create Group', new_group_path %>
+              <div class="ml-4 flex flex-1 flex-col">
+                <div>
+                  <div class="flex justify-between text-base font-medium text-gray-900">
+                    <h3>
+                      <%= link_to group.name, group_transactions_path(group_id: group.id) %>
+                    </h3>
+                    <p class="ml-4">$90.00</p>
+                  </div>
+                  <p class="mt-1 text-sm text-gray-500">Salmon</p>
+                </div>
+                <div class="flex flex-1 items-end justify-between text-sm">
+                  <p class="text-gray-500">Qty 1</p>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="py-6 px-4 sm:px-6">
+      <div class="mt-6">
+        <%= link_to 'Create Group', new_group_path,  class: "flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700" %>
+      </div>
+    </div>
+
+  </div>        
+</div>
