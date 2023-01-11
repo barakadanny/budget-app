@@ -74,3 +74,5 @@ end
 
 gem 'devise'
 gem 'petergate', '~> 3.0'
+
+gem "tailwindcss-rails", "~> 2.0"
