@@ -13,8 +13,11 @@
 
   <body>
     <%=render 'shared/nav'%>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+
+    <p class="mx-auto max-w-4xl py-3 px-3"> 
+      <span class= "text-green-600"><%= notice  %></span>
+      <span class= "text-green-600" ><%= alert %> </span>
+    </p>
 
     <%= yield %>
   </body>
