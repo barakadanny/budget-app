@@ -1,8 +1,38 @@
-<h1>Transaction Page</h1>
+<div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl  max-w-screen-lg px-4 py-2 mx-auto">
+  <div class="flex-1 overflow-y-auto py-2 px-4 sm:px-6">
+    <div class="flex items-start justify-between">
+      <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">Groups Transaction</h2>
+    </div>
 
-<% @transactions.each do |transaction| %>
-  <p><%= transaction.name %></p>
-  <p><%= transaction.amount %></p>
-<% end %>
+    <div class="mt-8">
+      <div class="flow-root">
+        <ul role="list" class="-my-6 divide-y divide-gray-200">
+          <% @transactions.each do |transaction| %>
+            <li class="flex py-6">
 
-<%= link_to 'Create transaction', new_group_transaction_path(group_id: @group.id) %>
+              <div class="ml-4 flex flex-1 flex-col">
+                <div>
+                  <div class="flex justify-between text-base font-medium text-gray-900">
+                    <h3>
+                      <%= transaction.name %>
+                    </h3>
+                    <p class="ml-4"><%= transaction.amount %> $</p>
+                  </div>
+                </div>
+              </div>
+
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="py-6 px-4 sm:px-6">
+      <div class="mt-6">
+        <%= link_to 'Create transaction', new_group_transaction_path(group_id: @group.id), class: "flex items-center justify-center border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700" %>
+      </div>
+    </div>
+
+  </div>        
+</div>
+
+
