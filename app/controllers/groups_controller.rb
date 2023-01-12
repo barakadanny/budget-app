@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   access user: :all, admin: :all
 
   def index
-    @groups = Group.joins(:user).where(users: {id: current_user.id})
+    @groups = Group.joins(:user).where(users: { id: current_user.id })
     @group_sums = Transaction.where(group_id: @groups.pluck(:id)).group(:group_id).sum(:amount)
   end
 

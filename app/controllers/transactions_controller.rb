@@ -1,6 +1,6 @@
 class TransactionsController < ApplicationController
   access user: :all, admin: :all
-  
+
   def index
     @group = Group.find(params[:group_id])
     @transactions = Transaction.where(group_id: @group.id, user_id: current_user.id)
