@@ -16,7 +16,7 @@ class TransactionsController < ApplicationController
     if @transaction.save
       redirect_to group_transactions_path(@transaction.group_id)
     else
-      render "new", status: :unprocessable_entity
+      render 'new', status: :unprocessable_entity
     end
   end
 

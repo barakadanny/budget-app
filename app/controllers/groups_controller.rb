@@ -20,7 +20,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to groups_path
     else
-      render "new", status: :unprocessable_entity
+      render 'new', status: :unprocessable_entity
     end
   end
 

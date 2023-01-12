@@ -6,10 +6,10 @@ RSpec.describe 'Groups', type: :request do
     post user_session_path, params: { user: { email: user.email, password: user.password } }
     get root_path
 
-    @group = Group.new(name: "My group name", user_id: 1)
+    @group = Group.new(name: 'My group name', user_id: 1)
     @group.save
 
-    transaction = Transaction.new(name: "My transaction", amount: 100, user_id: 1, group_id: @group.id)
+    transaction = Transaction.new(name: 'My transaction', amount: 100, user_id: 1, group_id: @group.id)
     transaction.save
   end
 end
