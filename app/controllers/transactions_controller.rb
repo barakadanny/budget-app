@@ -4,6 +4,7 @@ class TransactionsController < ApplicationController
   def index
     @group = Group.find(params[:group_id])
     @transactions = Transaction.where(group_id: @group.id, user_id: current_user.id).order(created_at: :desc)
+    @transactions_sum = @transactions.sum(:amount)
   end
 
   def new
