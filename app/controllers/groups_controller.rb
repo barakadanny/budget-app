@@ -2,7 +2,8 @@ class GroupsController < ApplicationController
   access user: :all, admin: :all
 
   def index
-    @groups = Group.joins(:user).where(users: {id: current_user.id})
+    @groups = Group.joins(:user).where(users: { id: current_user.id })
+    @group_sums = Transaction.where(group_id: @groups.pluck(:id)).group(:group_id).sum(:amount)
   end
 
   def show
@@ -19,7 +20,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to groups_path
     else
-      render "new", status: :unprocessable_entity
+      render 'new', status: :unprocessable_entity
     end
   end
 

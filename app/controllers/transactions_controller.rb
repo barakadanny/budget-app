@@ -1,6 +1,6 @@
 class TransactionsController < ApplicationController
   access user: :all, admin: :all
-  
+
   def index
     @group = Group.find(params[:group_id])
     @transactions = Transaction.where(group_id: @group.id, user_id: current_user.id)
@@ -16,7 +16,7 @@ class TransactionsController < ApplicationController
     if @transaction.save
       redirect_to group_transactions_path(@transaction.group_id)
     else
-      render "new", status: :unprocessable_entity
+      render 'new', status: :unprocessable_entity
     end
   end
 
