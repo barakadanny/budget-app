@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   def index
+    @categories = Category.where(user_id: current_user.id).order(created_at: :desc)
   end
 
   def new
@@ -15,6 +16,8 @@ class CategoriesController < ApplicationController
       render 'new', status: :unprocessable_entity
     end
   end
+
+  private
 
   def category_params
     params.require(:category).permit(:name, :user_id)
