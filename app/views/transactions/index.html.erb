@@ -13,9 +13,10 @@
               <div class="ml-4 flex flex-1 flex-col">
                 <div>
                   <div class="flex justify-between text-base font-medium text-gray-900">
-                    <h3>
-                      <%= transaction.name %>
-                    </h3>
+                    <div>
+                      <h3><%= transaction.name %> </h3>
+                      <span class="text-gray-500 text-sm">created on <%= transaction.created_at.strftime("%B %e, %Y")%> </span>
+                    </div>
                     <p class="ml-4"><%= transaction.amount %> $</p>
                   </div>
                 </div>
