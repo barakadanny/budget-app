@@ -19,7 +19,6 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -46,8 +45,6 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
 - `User account creation and login:` This feature allows users to create a unique account and login to access their budget information.
 - `Group creation:` Users can create groups to organize their expenses and transactions, making it easy to track specific areas of their budget.
 - `Transactions tracking:` Users can add transactions to their groups, allowing them to keep track of their spending and ensure they stay within their budget.
@@ -58,8 +55,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
+- [Project video Presentation](https://www.loom.com/share/c82a7978f2354fbdb20613d07fd428a6)
 - [Live Demo Link](https://yourdeployedapplicationlink.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -67,8 +63,6 @@
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
-
-> Describe how a new developer could make use of your project.
 
 To get a local copy up and running, follow these steps.
 
@@ -162,9 +156,7 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
+If you like the project don't forget to give a star
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
