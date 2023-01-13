@@ -55,8 +55,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Project video Presentation](https://www.loom.com/share/a3a855dcb9374b0f93e7ca8e4c39e9ba)
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+- [Live Demo Link](https://www.loom.com/share/a3a855dcb9374b0f93e7ca8e4c39e9ba)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -156,7 +155,10 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-If you like the project don't forget to give a star
+I would like to acknowledge:
+
+- [Microverse](https://www.microverse.org/) for the opportunity to work on this project
+- [The creative common](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) for the design
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
