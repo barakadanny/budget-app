@@ -5,11 +5,11 @@
       <%= form_with(model: group) do |form| %>
         <div class="overflow-hidden shadow sm:rounded-md">
           <div class="bg-white px-4 py-5 sm:p-6">
-          <% if @group.errors.any? %>
-            <% @group.errors.full_messages.each do |message|%>
-                <h3><%= message %> </h3>
+            <% if @group.errors.any? %>
+              <% @group.errors.full_messages.each do |message|%>
+                  <h3 class="text-red-700"><%= message %> </h3>
+              <%end%>
             <%end%>
-        <%end%>
             <div class="grid grid-cols-6 gap-6">
               <div class="col-span-6 sm:col-span-3">
                 <label for="first-name" class="block text-sm font-medium text-gray-700">name</label>

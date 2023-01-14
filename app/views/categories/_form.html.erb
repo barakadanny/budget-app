@@ -3,6 +3,11 @@
     <div class="mt-5 md:col-span-2 md:mt-0">
     <h1 class="pl-5 text-lg">Create a New Category</h1>
       <%= form_with scope: :category, url: categories_path, local: true do |form| %>
+      <% if @category.errors.any? %>
+            <% @category.errors.full_messages.each do |message|%>
+                <h3 class="text-red-700"><%= message %> </h3>
+            <%end%>
+          <%end%>
         <div class="overflow-hidden shadow sm:rounded-md">
           <div class="bg-white px-4 py-5 sm:p-6">
             <div class="grid grid-cols-6 gap-6">
