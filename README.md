@@ -57,9 +57,7 @@
 
 - [Live Demo Link](https://www.loom.com/share/a3a855dcb9374b0f93e7ca8e4c39e9ba)
 
-- The website has built successfully but due to billing it can not be accessed, the issue will be solved in the next few hours with the bank
-
-![Screenshot 2023-01-14 at 22 34 28](https://user-images.githubusercontent.com/53088629/212495016-ade52a36-7d31-4378-acc8-0bcb03209cc1.png)
+- [App live](https://budget-app-3fv5.onrender.com)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
