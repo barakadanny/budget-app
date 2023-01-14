@@ -16,6 +16,11 @@
                 <%= form.text_field :amount, class: "mt-1 block w-full border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
               </div>
 
+              <div class="col-span-6 sm:col-span-3">
+                <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
+                <%= form.select :category_ids, options_for_select(@categories.collect {|c| [ c.name, c.id ] }), {}, {multiple: true, class: "mt-1 block w-full border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"} %>
+              </div>
+
               <div class="col-span-6 sm:col-span-4 hidden">
                 <label for="email-address" class="block text-sm font-medium text-gray-700">User ID</label>
                 <%= form.text_field :user_id, :value => current_user.id %>
