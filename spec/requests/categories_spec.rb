@@ -16,8 +16,8 @@ RSpec.describe 'Groups', type: :request do
     @category.save
   end
 
-  describe "GET categories list index page" do
-    it "returns a success response" do
+  describe 'GET categories list index page' do
+    it 'returns a success response' do
       get categories_path
       expect(response).to be_successful
     end
@@ -27,8 +27,8 @@ RSpec.describe 'Groups', type: :request do
     end
   end
 
-  describe "Create new Category page" do
-    it "returns a success response" do
+  describe 'Create new Category page' do
+    it 'returns a success response' do
       get new_category_path
       expect(response).to be_successful
     end
