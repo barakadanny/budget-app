@@ -9,6 +9,7 @@ class TransactionsController < ApplicationController
 
   def new
     @transaction = Transaction.new
+    @categories = Category.where(user_id: current_user.id)
   end
 
   def create
@@ -24,6 +25,6 @@ class TransactionsController < ApplicationController
   private
   
   def transaction_params
-    params.require(:transaction).permit(:name, :amount, :user_id, :group_id)
+    params.require(:transaction).permit(:name, :amount, :user_id, :group_id, category_ids: [])
   end
 end
