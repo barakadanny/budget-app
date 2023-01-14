@@ -10,9 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_10_110420) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_13_232106) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_categories_on_user_id"
+  end
+
+  create_table "categories_transactions", id: false, force: :cascade do |t|
+    t.bigint "transaction_id", null: false
+    t.bigint "category_id", null: false
+    t.index ["transaction_id", "category_id"], name: "index_categories_transactions_on_transaction_id_and_category_id"
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
@@ -43,10 +57,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_10_110420) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "roles"
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "categories", "users"
   add_foreign_key "groups", "users"
   add_foreign_key "transactions", "groups"
   add_foreign_key "transactions", "users"

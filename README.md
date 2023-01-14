@@ -166,6 +166,14 @@ I would like to acknowledge:
 
 ## ❓ FAQ <a name="faq"></a>
 
+- **Is Rails relevant in 2023?**
+
+  - [Yes, Rails is still popular among developer](https://blog.railwaymen.org/is-ruby-on-rails-dead)
+
+- **Is it easy to learn Ruby on Rails**
+
+  - [It is very easy to learn compared to most of the programming languages](https://careerkarma.com/blog/why-learn-ruby-on-rails/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->

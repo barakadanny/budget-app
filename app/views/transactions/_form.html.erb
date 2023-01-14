@@ -5,6 +5,11 @@
       <%= form_with model: @transaction do |form| %>
         <div class="overflow-hidden shadow sm:rounded-md">
           <div class="bg-white px-4 py-5 sm:p-6">
+          <% if @transaction.errors.any? %>
+            <% @transaction.errors.full_messages.each do |message|%>
+                <h3 class="text-red-700"><%= message %> </h3>
+            <%end%>
+          <%end%>
             <div class="grid grid-cols-6 gap-6">
               <div class="col-span-6 sm:col-span-3">
                 <label for="first-name" class="block text-sm font-medium text-gray-700">name</label>
@@ -14,6 +19,16 @@
               <div class="col-span-6 sm:col-span-3">
                 <label for="last-name" class="block text-sm font-medium text-gray-700">Amount</label>
                 <%= form.text_field :amount, class: "mt-1 block w-full border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+              </div>
+
+              <div class="col-span-6 sm:col-span-3">
+                <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
+                <%# <%= form.select :category_ids, options_for_select(@categories.collect {|c| [ c.name, c.id ] }), {}, {multiple: true, class: "mt-1 block w-full border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"} %> 
+                <% if !@categories.blank? %>
+                  <%= form.select :category_ids, options_for_select(@categories.collect {|c| [ c.name, c.id ] }), {}, {multiple: true, class: "mt-1 block w-full border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"} %>
+                <% else %>
+                  <p class="text-red-600"> ⚠️ ⚠️ Refresh this page and make sure to select a category </p>
+                <% end %>
               </div>
 
               <div class="col-span-6 sm:col-span-4 hidden">
