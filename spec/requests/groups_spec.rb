@@ -1,12 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'Groups', type: :request do
+  before(:each) do
+    user = User.create email: 'tom@example.com', password: '123456'
+    post user_session_path, params: { user: { email: user.email, password: user.password } }
+    get root_path
+  end
+  
   describe 'GET index' do
-    before(:each) do
-      user = User.create email: 'tom@example.com', password: '123456'
-      post user_session_path, params: { user: { email: user.email, password: user.password } }
-      get root_path
-    end
 
     it 'should return http request' do
       expect(response).to have_http_status(:success)
