@@ -53,12 +53,6 @@
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- [Live Demo Link](https://www.loom.com/share/a3a855dcb9374b0f93e7ca8e4c39e9ba)
-
-- [App live](https://budget-app-3fv5.onrender.com)
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
