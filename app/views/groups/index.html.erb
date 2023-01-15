@@ -1,0 +1,46 @@
+<div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl  max-w-screen-lg px-4 py-2 mx-auto">
+  <div class="flex-1 overflow-y-auto py-2 px-4 sm:px-6">
+    <div class="flex items-start justify-between">
+      <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">Groups</h2>
+      <%= link_to "New Category", categories_path, class: "inline-flex justify-center border border-transparent cursor-pointer bg-secondColor py-2 px-4 text-sm font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-secondColor focus:ring-offset-2"%>
+    </div>
+
+    <div class="mt-8">
+      <div class="flow-root">
+        <ul role="list" class="-my-6 divide-y divide-gray-200">
+          <% @groups.each do |group| %>
+            <li class="flex py-6">
+              <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                <%= image_tag group.icon, class: "h-full w-full object-cover object-center" %>
+              </div>
+
+              <div class="ml-4 flex flex-1 flex-col">
+                <div>
+                  <div class="flex justify-between text-base font-medium text-gray-900">
+                    <h3>
+                      <%= link_to group.name, group_transactions_path(group_id: group.id) %>
+                    </h3>
+                    <p class="ml-4">
+                      <span class="font-bold">Total Amount:</span> <%= @group_sums[group.id] || 0 %> $
+                    </p>
+                  </div>
+                </div>
+                <div class="flex flex-1 items-end justify-between text-sm">
+                  <p class="text-gray-500">
+                    <span>Created</span> <%= time_ago_in_words(group.created_at) %> ago
+                  </p>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="py-6 px-4 sm:px-6 fixed bottom-0 left-0 right-0 mb-6 ml-6">
+      <div class="mt-6">
+        <%= link_to 'Create Group', new_group_path,  class: "flex items-center justify-center border border-transparent bg-secondColor px-6 py-3 text-base font-medium text-white shadow-sm" %>
+      </div>
+    </div>
+
+  </div>        
+</div>

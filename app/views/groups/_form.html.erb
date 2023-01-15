@@ -1,0 +1,31 @@
+<div class="mt-10 sm:mt-0 max-w-screen-lg px-4 py-8 mx-auto">
+  <div class="md:grid md:grid-cols-3 md:gap-6">
+    <div class="mt-5 md:col-span-2 md:mt-0">
+    <h1 class="pl-5 text-lg">Create a New Group</h1>
+      <%= form_with(model: group) do |form| %>
+        <div class="overflow-hidden shadow sm:rounded-md">
+          <div class="bg-white px-4 py-5 sm:p-6">
+            <% if @group.errors.any? %>
+              <% @group.errors.full_messages.each do |message|%>
+                  <h3 class="text-red-700"><%= message %> </h3>
+              <%end%>
+            <%end%>
+            <div class="grid grid-cols-6 gap-6">
+              <div class="col-span-6 sm:col-span-3">
+                <label for="first-name" class="block text-sm font-medium text-gray-700">name</label>
+                <%= form.text_field :name, class: "mt-1 block w-full border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+              </div>
+
+              <div class="col-span-6 sm:col-span-3">
+                <label for="last-name" class="block text-sm font-medium text-gray-700">Icon Link</label>
+                <%= form.text_field :icon, class: "mt-1 block w-full border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+              </div>
+          </div>
+          <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
+            <%= form.submit "Create Group", class: "inline-flex justify-center border border-transparent bg-secondColor py-2 px-4 text-sm font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 cursor-pointer" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

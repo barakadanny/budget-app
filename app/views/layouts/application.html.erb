@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+    <%=render 'shared/nav'%>
+
+    <p class="mx-auto max-w-4xl py-3 px-3"> 
+      <span class= "text-green-600"><%= notice  %></span>
+      <span class= "text-green-600" ><%= alert %> </span>
+    </p>
+
     <%= yield %>
   </body>
 </html>
